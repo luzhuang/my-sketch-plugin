@@ -1,0 +1,31 @@
+{
+  "name": "my-plugin",
+  "version": "0.1.0",
+  "description": "myplugin",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "my-plugin",
+    "manifest": "src/manifest.json",
+    "main": "my-plugin.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "dependencies": {
+    "@skpm/dialog": "^0.2.3",
+    "@skpm/fs": "^0.1.2",
+    "@skpm/path": "^0.1.0"
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.2"
+  },
+  "author": "wz84888 <wz84888@alibaba-inc.com>"
+}
